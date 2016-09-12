@@ -30,6 +30,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - API
+
+- (void) getFriendsFromServer{
+    
+}
+
+
 #pragma mark - UITableViewDataSource
 
 
