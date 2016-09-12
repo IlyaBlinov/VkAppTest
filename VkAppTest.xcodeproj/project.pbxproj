@@ -21,6 +21,7 @@
 		097C7D0D1D86CAF0009080C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097C7CEF1D86CAF0009080C9 /* UIKit.framework */; };
 		097C7D151D86CAF0009080C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 097C7D131D86CAF0009080C9 /* InfoPlist.strings */; };
 		097C7D171D86CAF0009080C9 /* VkAppTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 097C7D161D86CAF0009080C9 /* VkAppTestTests.m */; };
+		099C66FA1D86F1BD00C0424E /* IBServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 099C66F91D86F1BD00C0424E /* IBServerManager.m */; };
 		FFFD54BFAE6535C3CC9CBC33 /* libPods-VkAppTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC6BCDCA27FFF15B6C35F60 /* libPods-VkAppTest.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		097C7D121D86CAF0009080C9 /* VkAppTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VkAppTestTests-Info.plist"; sourceTree = "<group>"; };
 		097C7D141D86CAF0009080C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		097C7D161D86CAF0009080C9 /* VkAppTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VkAppTestTests.m; sourceTree = "<group>"; };
+		099C66F81D86F1BD00C0424E /* IBServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBServerManager.h; sourceTree = "<group>"; };
+		099C66F91D86F1BD00C0424E /* IBServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBServerManager.m; sourceTree = "<group>"; };
 		6CC6BCDCA27FFF15B6C35F60 /* libPods-VkAppTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VkAppTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B9EA6B22C7027D4FF559B0 /* Pods-VkAppTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkAppTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-VkAppTest/Pods-VkAppTest.release.xcconfig"; sourceTree = "<group>"; };
 		FE072C4C019175C818F1BA64 /* Pods-VkAppTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkAppTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VkAppTest/Pods-VkAppTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				097C7CFD1D86CAF0009080C9 /* Main.storyboard */,
 				097C7D001D86CAF0009080C9 /* IBViewController.h */,
 				097C7D011D86CAF0009080C9 /* IBViewController.m */,
+				099C66F81D86F1BD00C0424E /* IBServerManager.h */,
+				099C66F91D86F1BD00C0424E /* IBServerManager.m */,
 				097C7D031D86CAF0009080C9 /* Images.xcassets */,
 				097C7CF21D86CAF0009080C9 /* Supporting Files */,
 			);
@@ -318,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				097C7CF81D86CAF0009080C9 /* main.m in Sources */,
+				099C66FA1D86F1BD00C0424E /* IBServerManager.m in Sources */,
 				097C7CFC1D86CAF0009080C9 /* IBAppDelegate.m in Sources */,
 				097C7D021D86CAF0009080C9 /* IBViewController.m in Sources */,
 			);
