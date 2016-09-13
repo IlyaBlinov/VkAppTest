@@ -20,6 +20,9 @@
 {
     [super viewDidLoad];
 	self.friendsArray = [NSMutableArray array];
+    
+    [self getFriendsFromServer];
+    
 }
 
 
@@ -33,6 +36,21 @@
 #pragma mark - API
 
 - (void) getFriendsFromServer{
+    
+    [[IBServerManager sharedManager] getFriendsWithOffset:[self.friendsArray count] count:20 onSuccess:^(NSArray *friends) {
+        
+        [self.friendsArray addObjectsFromArray:self.friendsArray];
+        
+        [self.tableView reloadData];
+        
+     
+    } onFailure:^(NSError *error, NSInteger statusCode) {
+        
+        NSLog(@"error = %@, code = %d", [error localizedDescription], statusCode);
+        
+        
+    }];
+    
     
 }
 
