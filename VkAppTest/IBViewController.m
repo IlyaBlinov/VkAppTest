@@ -79,6 +79,12 @@ static NSInteger friendsInRequest = 5;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
+    NSDictionary *friend = [self.friendsArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
+                           [friend objectForKey:@"first_name"],
+                           [friend objectForKey:@"last_name"]];
+    
     return cell;
 }
 
