@@ -8,7 +8,7 @@
 
 #import "IBServerManager.h"
 #import "AFNetworking.h"
-
+#import "IBUser.h"
 
 @interface IBServerManager ()
 
@@ -78,10 +78,17 @@
       parameters:params
          success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
              
-             NSArray *friendsArray = [responseObject objectForKey:@"response"];
+             NSArray *dictArray = [responseObject objectForKey:@"response"];
+             
+             NSMutableArray *objectArray =  [NSMutableArray array];
+             
+             for (NSDictionary *dict in dictArray) {
+                 IBUser *user = [[IBUser alloc]  initWithServerResponse:dict];
+                 [objectArray addObject:user];
+             }
              
              if (success) {
-                 success(friendsArray);
+                 success(objectArray);
              }
              
         NSLog(@"JSON: %@", responseObject);
