@@ -20,7 +20,7 @@
 @implementation IBViewController
 
 
-static NSInteger friendsInRequest = 5;
+static NSInteger friendsInRequest = 10;
 
 
 - (void)viewDidLoad
