@@ -28,6 +28,7 @@ static NSInteger friendsInRequest = 5;
     
     [self getFriendsFromServer];
     
+        
 }
 
 
@@ -42,9 +43,10 @@ static NSInteger friendsInRequest = 5;
 
 - (void) getFriendsFromServer{
     
-    [[IBServerManager sharedManager] getFriendsWithOffset:[self.friendsArray count] count:friendsInRequest onSuccess:^(NSArray *friends) {
+    [[IBServerManager sharedManager] getFriendsWithOffset:
+     [self.friendsArray count] count:friendsInRequest onSuccess:^(NSArray *friends) {
         
-        [self.friendsArray addObjectsFromArray:self.friendsArray];
+        [self.friendsArray addObjectsFromArray:friends];
         
         [self.tableView reloadData];
         
@@ -80,6 +82,8 @@ static NSInteger friendsInRequest = 5;
     }
     
     NSDictionary *friend = [self.friendsArray objectAtIndex:indexPath.row];
+    
+    NSLog(@"%@", friend);
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
                            [friend objectForKey:@"first_name"],
