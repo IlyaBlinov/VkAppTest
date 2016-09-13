@@ -10,7 +10,7 @@
 
 @interface IBViewController ()
 
-@property (strong, nonatomic) NSArray *friendsArray;
+@property (strong, nonatomic) NSMutableArray *friendsArray;
 
 @end
 
@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	self.friendsArray = [NSMutableArray array];
 }
 
 
