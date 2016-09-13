@@ -7,7 +7,7 @@
 //
 
 #import "IBServerManager.h"
-
+#import "AFNetworking.h"
 @implementation IBServerManager
 
 
