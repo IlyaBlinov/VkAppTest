@@ -8,6 +8,9 @@
 
 #import "IBViewController.h"
 #import "IBServerManager.h"
+#import "IBUser.h"
+
+
 @interface IBViewController ()
 
 @property (strong, nonatomic) NSMutableArray *friendsArray;
