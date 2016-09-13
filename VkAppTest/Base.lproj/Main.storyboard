@@ -23,7 +23,7 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="siI-wx-Aza" id="hp8-dK-GVw"/>
+                            <outlet property="dataSource" destination="siI-wx-Aza" id="PGF-LG-KM0"/>
                             <outlet property="delegate" destination="siI-wx-Aza" id="Zzr-hy-cUK"/>
                         </connections>
                     </tableView>

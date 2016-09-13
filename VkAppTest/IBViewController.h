@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IBViewController : UITableViewController<UITableViewDataSource>
+@interface IBViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end
