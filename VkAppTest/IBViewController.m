@@ -102,7 +102,9 @@ static NSInteger friendsInRequest = 5;
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-     
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (indexPath.row == [self.friendsArray count]) {
     
         [self getFriendsFromServer];
