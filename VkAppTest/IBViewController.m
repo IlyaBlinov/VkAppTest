@@ -86,7 +86,7 @@ static NSInteger friendsInRequest = 5;
     
     if (indexPath.row == [self.friendsArray count]) {
         cell.textLabel.text = @"LOAD MORE";
-       // cell.imageView.image = nil;
+        cell.imageView.image = nil;
     }else{
     
     
@@ -98,7 +98,21 @@ static NSInteger friendsInRequest = 5;
                            user.firstName,
                            user.lastName];
         
-        [cell.imageView setImageWithURL:user.imageURL];
+        NSURLRequest *request = [NSURLRequest requestWithURL:user.imageURL];
+        
+        __weak UITableViewCell *weakCell = cell;
+        
+        cell.imageView.image = nil;
+        
+        [cell.imageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            
+            weakCell.imageView.image = image;
+            [weakCell layoutSubviews];
+            
+            
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+            
+        }];
     }
     return cell;
 }
