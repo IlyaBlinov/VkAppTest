@@ -65,9 +65,17 @@
                     onFailure:(void (^)(NSError *error, NSInteger statusCode)) failure{
     
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"https://api.vk.com/method/friends.get"
-      parameters:nil
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"237073493", @"user_id",
+                            @"name",      @"order",
+                            @(count),     @"count",
+                            @(offset),    @"offset",
+                            @"photo_50",  @"fields",
+                            @"nom",       @"name_case",
+                            nil];
+   
+    [self.requestOperationManager GET:@"friends.get"
+      parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              
         NSLog(@"JSON: %@", responseObject);
