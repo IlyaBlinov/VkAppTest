@@ -67,7 +67,7 @@ static NSInteger friendsInRequest = 5;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [self.friendsArray count];
+    return [self.friendsArray count] + 1;
 }
 
 
@@ -81,14 +81,20 @@ static NSInteger friendsInRequest = 5;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
+    if (indexPath.row == [self.friendsArray count]) {
+        cell.textLabel.text = @"LOAD MORE";
+        cell.imageView.image = nil;
+    }else{
+    
+    
     NSDictionary *friend = [self.friendsArray objectAtIndex:indexPath.row];
     
-    NSLog(@"%@", friend);
+  //  NSLog(@"%@", friend);
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
                            [friend objectForKey:@"first_name"],
                            [friend objectForKey:@"last_name"]];
-    
+    }
     return cell;
 }
 
