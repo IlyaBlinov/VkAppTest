@@ -10,4 +10,8 @@
 
 @interface IBServerManager : NSObject
 
+
++ (IBServerManager*) sharedManager;
+
+
 @end

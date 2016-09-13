@@ -10,4 +10,22 @@
 
 @implementation IBServerManager
 
+
++ (IBServerManager*) sharedManager{
+    
+    static IBServerManager *manager = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        manager = [[IBServerManager alloc] init];
+    });
+    
+    return manager;
+    
+}
+
+
+
+
+
 @end
