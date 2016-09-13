@@ -76,13 +76,24 @@
    
     [self.requestOperationManager GET:@"friends.get"
       parameters:params
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+             
+             NSArray *friendsArray = [responseObject objectForKey:@"response"];
+             
+             if (success) {
+                 success(friendsArray);
+             }
              
         NSLog(@"JSON: %@", responseObject);
              
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"Error: %@", error);
+        
+        if (failure) {
+            failure(error, operation.response.statusCode);
+        }
+        
     }];
     
     
