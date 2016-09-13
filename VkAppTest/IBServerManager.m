@@ -39,6 +39,26 @@
 }
 
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        NSURL *url = [NSURL URLWithString:@"https://api.vk.com/method/"];
+        
+        
+        self.requestOperationManager = [[AFHTTPRequestOperationManager alloc]
+                                        initWithBaseURL:url];
+        
+    }
+    return self;
+}
+
+
+
+
+
+
 - (void) getFriendsWithOffset: (NSInteger) offset
                         count: (NSInteger) count
                     onSuccess:(void(^) (NSArray *friends)) success
