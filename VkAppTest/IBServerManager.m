@@ -31,6 +31,17 @@
                     onFailure:(void (^)(NSError *error, NSInteger statusCode)) failure{
     
     
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"https://api.vk.com/method/friends.get"
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             
+        NSLog(@"JSON: %@", responseObject);
+             
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"Error: %@", error);
+    }];
     
     
     
