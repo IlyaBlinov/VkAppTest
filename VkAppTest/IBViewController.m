@@ -16,9 +16,14 @@
 
 @implementation IBViewController
 
+
+static NSInteger friendsInRequest = 5;
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	self.friendsArray = [NSMutableArray array];
     
     [self getFriendsFromServer];
@@ -37,7 +42,7 @@
 
 - (void) getFriendsFromServer{
     
-    [[IBServerManager sharedManager] getFriendsWithOffset:[self.friendsArray count] count:20 onSuccess:^(NSArray *friends) {
+    [[IBServerManager sharedManager] getFriendsWithOffset:[self.friendsArray count] count:friendsInRequest onSuccess:^(NSArray *friends) {
         
         [self.friendsArray addObjectsFromArray:self.friendsArray];
         
