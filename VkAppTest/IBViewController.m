@@ -86,17 +86,17 @@ static NSInteger friendsInRequest = 5;
     
     if (indexPath.row == [self.friendsArray count]) {
         cell.textLabel.text = @"LOAD MORE";
-        cell.imageView.image = nil;
+       // cell.imageView.image = nil;
     }else{
     
     
-    NSDictionary *friend = [self.friendsArray objectAtIndex:indexPath.row];
+    IBUser *user = [self.friendsArray objectAtIndex:indexPath.row];
     
   //  NSLog(@"%@", friend);
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
-                           [friend objectForKey:@"first_name"],
-                           [friend objectForKey:@"last_name"]];
+                           user.firstName,
+                           user.lastName];
     }
     return cell;
 }

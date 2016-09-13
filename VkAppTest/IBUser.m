@@ -18,7 +18,7 @@
     if (self) {
         
         self.firstName = [responseObject objectForKey:@"first_name"];
-        self.firstName = [responseObject objectForKey:@"last_name"];
+        self.lastName = [responseObject objectForKey:@"last_name"];
         
         NSString *urlString = [responseObject objectForKey:@"photo_50"];
         
