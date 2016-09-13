@@ -9,7 +9,7 @@
 #import "IBViewController.h"
 #import "IBServerManager.h"
 #import "IBUser.h"
-
+#import "UIImageView+AFNetworking.h"
 
 @interface IBViewController ()
 
@@ -97,6 +97,8 @@ static NSInteger friendsInRequest = 5;
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
                            user.firstName,
                            user.lastName];
+        
+        [cell.imageView setImageWithURL:user.imageURL];
     }
     return cell;
 }
